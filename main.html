@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="character-context" class="change-context">
+    <div>
+      <div><img onclick="client.initBuild('Kaeya'); client.hideContext('character')" src="img/kaeya.png"><img onclick="client.initBuild('Kamisato Ayaka'); client.hideContext('character')" src="img/kamisato_ayaka.png"></div>
+    </div>
+    <div><button onclick="client.hideContext('character')">Закрыть</button></div>
+  </div>
+  <div id="weapon-sword-context" class="change-context">
+    <div>
+      <div><img src="img/prototype_rancour.png"><img src="img/aquila_favonia.png"></div>
+    </div>
+    <div><button onclick="client.hideContext('weapon-sword')">Закрыть</button></div>
+  </div>
+  <div id="weapon-polearm-context" class="change-context">
+    <div></div>
+    <div><button onclick="client.hideContext('weapon-polearm')">Закрыть</button></div>
+  </div>
+  <div id="weapon-catalyst-context" class="change-context">
+    <div></div>
+    <div><button onclick="client.hideContext('weapon-catalyst')">Закрыть</button></div>
+  </div>
+  <div id="weapon-claymore-context" class="change-context">
+    <div></div>
+    <div><button onclick="client.hideContext('weapon-claymore')">Закрыть</button></div>
+  </div>
+  <div id="weapon-bow-context" class="change-context">
+    <div></div>
+    <div><button onclick="client.hideContext('weapon-bow')">Закрыть</button></div>
+  </div>
+  <div id="enemy-context" class="change-context">
+    <div>
+      <div><img src="img/hilichurl.png"><img src="img/treasure_hoarder.png"></div>
+    </div>
+    <div><button onclick="client.hideContext('enemy')">Закрыть</button></div>
+  </div>
+  <div class="windows">
+    <div style="width: 30%">
+      <div class="part-of-settings">
+        <div><img id="character-icon"></div>
+        <div>
+          <div id="character-name"></div>
+          <div id="character-stars">
+            <img onclick="client.changeCharacterAscension(2)" src="img/emptystar.png"><img onclick="client.changeCharacterAscension(4)" src="img/emptystar.png"><img onclick="client.changeCharacterAscension(6)" src="img/emptystar.png"><img onclick="client.changeCharacterAscension(8)" src="img/emptystar.png"><img onclick="client.changeCharacterAscension(10)" src="img/emptystar.png"><img onclick="client.changeCharacterAscension(12)" src="img/emptystar.png">
+            <span id="character-lvl">1/20</span><img onclick="client.arrow(this)" data-arrow="0" src="img/arrowdown.png">
+          </div>
+        </div>
+      </div>
+      <button onclick="client.showContext('character')">Изменить</button>
+      <div class="part-of-settings">
+        <div><img id="weapon-icon"></div>
+        <div>
+          <div id="weapon-name"></div>
+          <div id="weapon-stars">
+            <img onclick="client.changeWeaponAscension(1)" src="img/emptystar.png"><img onclick="client.changeWeaponAscension(2)" src="img/emptystar.png"><img onclick="client.changeWeaponAscension(3)" src="img/emptystar.png"><img onclick="client.changeWeaponAscension(4)" src="img/emptystar.png"><img onclick="client.changeWeaponAscension(5)" src="img/emptystar.png"><img onclick="client.changeWeaponAscension(6)" src="img/emptystar.png">
+            <span id="weapon-lvl">20/20</span>
+          </div>
+          <div>Ранг пробуждения: <input onclick="client.clearInput(this)" oninput="client.changeWeaponRefinement(this)" id="weapon-refinement" style="width: 10px"></div>
+        </div>
+      </div>
+      <button onclick="client.showContext('weapon')">Изменить</button>
+      <div class="part-of-settings">
+        <div><img id="enemy-icon"></div>
+        <div>
+          <div id="enemy-name"></div>
+          <div>Уровень: <input onclick="client.clearInput(this)" oninput="client.changeEnemylvl(this)" id="enemy-lvl" style="width: 30px"></div>
+        </div>
+      </div>
+      <button onclick="client.showContext('enemy')">Изменить</button>
+    </div>
+    <div style="width: 65%">
+      <div class="talent">
+        <div><img id="normal-attack-icon"></div>
+        <div>
+          <div id="normal-attack-name"></div>
+          Уровень таланта: <input onclick="client.clearInput(this)" oninput="client.recomputeFirstTalent(this)" id="first-talent-lvl" style="width: 20px">
+        </div>
+        <div id="normal-attack-fields"></div>
+      </div>
+      <div class="talent">
+        <div><img id="elemental-skill-icon"></div>
+        <div>
+          <div id="elemental-skill-name"></div>
+          Уровень таланта: <input onclick="client.clearInput(this)" oninput="client.recomputeSecondTalent(this)" id="second-talent-lvl" style="width: 20px">
+        </div>
+        <div id="elemental-skill-fields"></div>
+      </div>
+      <div class="talent">
+        <div><img id="elemental-burst-icon"></div>
+        <div>
+          <div id="elemental-burst-name"></div>
+          Уровень таланта: <input onclick="client.clearInput(this)" oninput="client.recomputeThirdTalent(this)" id="third-talent-lvl" style="width: 20px">
+        </div>
+        <div id="elemental-burst-fields"></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="main.js"></script>
+</html>

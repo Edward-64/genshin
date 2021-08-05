@@ -1,0 +1,33 @@
+.part-of-settings {
+  display: flex;
+}
+
+.windows {
+  display: flex;
+}
+
+.talent>div {
+  display: inline-block;
+}
+
+.field-of-talent>div {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.change-context {
+  display: none;
+  position: absolute;
+  background-color: white;
+  margin: 0 25% 0 25%;
+  width: 50%;
+  padding: 10px;
+  border: solid 1px #808b91;
+  border-radius: 3px;
+}
+
+.change-context>div>div {
+  display: flex;
+  justify-content: space-around;
+}
